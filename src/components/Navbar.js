@@ -11,6 +11,11 @@ import { withCookies } from "react-cookie"; //cookieへアクセスしtokenを�
 
 //materialuiの定義
 const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: "#33c9dc",
+    color: "black",
+  },
   bg: {
     marginRight: theme.spacing(1),
   },
@@ -31,11 +36,11 @@ const Navbar = (props) => {
   };
   return (
     // navigation全体
-    <AppBar position="static">
+    <AppBar position="static" className={classes.root}>
       {/* ツールバー内に記載 */}
       <Toolbar>
-        <Typography variant="h5" className={classes.title}>
-          Favo Load Bike !
+        <Typography variant="h4" className={classes.title}>
+          Favo Load Bike
         </Typography>
         <Badge
           className={classes.bg}

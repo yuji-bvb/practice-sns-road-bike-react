@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital@1&display=swap");
+body {
+  background-color: #292f35;
+}
 
 .signOut {
   background-color: transparent;
@@ -12,14 +15,13 @@
 
 .container {
   margin: 20px 0 auto;
-  /* max-width: 1200px; */
 }
 
 .app-profiles {
   background-color: #292f38;
   width: 100vh;
   min-width: 250px;
-  height: 700px;
+  height: 770px;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
@@ -28,9 +30,9 @@
 
 .app-details {
   background-color: #292f38;
-  width: 100vh;
+  width: 100%;
   min-width: 250px;
-  height: 330px;
+  height: 770px;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
@@ -39,7 +41,7 @@
 
 .app-dms {
   background-color: #292f38;
-  width: 100vh;
+  width: 100%;
   min-width: 250px;
   height: 700px;
   padding: 10px;
@@ -123,17 +125,23 @@ h3 {
 }
 
 .modal-title {
+  font-size: 30px;
   text-align: center;
 }
 
 .btn-modal {
   background-color: transparent;
   color: gray;
+  text-align: right;
   margin-right: 20px;
-  font-size: 50px;
+  font-size: 30px;
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.btn-posi {
+  text-align: right;
 }
 
 .mail {
@@ -220,5 +228,11 @@ h3 {
   }
   .modal-title {
     font-size: 15px;
+  }
+  .btn-modal {
+    font-size: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 }

@@ -8,13 +8,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import { RiMailAddLine } from "react-icons/ri";
 import { IoIosSend } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+// import Card from "@material-ui/core/Card";
+// import CardMedia from "@material-ui/core/CardMedia";
+// import CardContent from "@material-ui/core/CardContent";
 
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
   text: {
-    width: 300,
+    width: 250,
+    maxWidth: "100%",
     margin: theme.spacing(3),
   },
 }));
@@ -29,6 +33,9 @@ const Ask = ({ ask, prof }) => {
 
   const customStyles = {
     content: {
+      width: 300,
+      height: 200,
+      maxWidth: "100%",
       top: "50%",
       left: "50%",
       transform: "translate(-50%,-50%)",
@@ -56,6 +63,7 @@ const Ask = ({ ask, prof }) => {
   return (
     <li className="list-item">
       <h4>{prof[0].nickName}</h4>
+
       {!ask.approved ? (
         <Button
           size="small"
@@ -83,12 +91,14 @@ const Ask = ({ ask, prof }) => {
           onChange={handleInputChange()}
         />
         <br />
-        <button className="btn-modal" onClick={() => sendDM()}>
-          <IoIosSend />
-        </button>
-        <button className="btn-modal" onClick={() => setModalIsOpen(false)}>
-          <IoMdClose />
-        </button>
+        <div className="btn-posi">
+          <button className="btn-modal" onClick={() => setModalIsOpen(false)}>
+            <IoMdClose />
+          </button>
+          <button className="btn-modal" onClick={() => sendDM()}>
+            <IoIosSend />
+          </button>
+        </div>
       </Modal>
     </li>
   );

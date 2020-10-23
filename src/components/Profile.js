@@ -64,13 +64,13 @@ const Profile = ({ profileData, askData }) => {
           />
           <CardContent>
             <Typography variant="h3" color="textSecondary" component="p">
-              FRAME : {profileData.frame}
+              FRAME : {profileData.framebrand} {profileData.frame}
             </Typography>
             <Typography variant="h3" color="textSecondary" component="p">
-              COMPO : {profileData.compo}
+              COMPO : {profileData.compobrand} {profileData.compo}
             </Typography>
             <Typography variant="h3" color="textSecondary" component="p">
-              WHEEL : {profileData.wheel}
+              WHEEL : {profileData.wheelbrand} {profileData.wheel}
             </Typography>
           </CardContent>
         </Card>

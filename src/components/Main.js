@@ -34,63 +34,70 @@ const Main = () => {
 
   return (
     <Grid container>
-      <Grid item xs={12} sm={12} md={5}>
+      <Grid item xs={12} sm={12} md={7}>
         <Grid container spacing={0}>
           <div className="app-details">
             <ProfileManager />
           </div>
-          <div className="app-details">
-            <h3 className="title-ask">
-              <BsFillPeopleFill className="badge" />
-              Approval request list
-            </h3>
-            <div className="task-list">
-              <ul>
-                {profile.id &&
-                  askList.map((ask) => (
-                    <Ask
-                      key={ask.id}
-                      ask={ask}
-                      prof={profiles.filter((item) => {
-                        return item.userPro === ask.askFrom;
-                      })}
-                    />
-                  ))}
-              </ul>
-            </div>
-          </div>
         </Grid>
       </Grid>
-      <Grid item xs={12} sm={12} md={4}>
+      <Grid item xs={12} sm={12} md={5}>
         <Grid container spacing={0}>
           <div className="app-profiles">
             <div className="task-list">{listProfiles}</div>
           </div>
         </Grid>
       </Grid>
-
-      <Grid item xs={12} sm={12} md={3}>
-        <Grid container spacing={0}>
-          <div className="app-dms">
-            <h3>
-              <GoMail className="badge" />
-              DM Inbox
-            </h3>
-            <div className="task-list">
-              <ul>
-                {profile.id &&
-                  inbox.map((dm) => (
-                    <InboxDM
-                      key={dm.id}
-                      dm={dm}
-                      prof={profiles.filter((item) => {
-                        return item.userPro === dm.sender;
-                      })}
-                    />
-                  ))}
-              </ul>
+      <Grid container justify="center">
+        <Grid item xs={12} sm={12} md={12}>
+          <Grid container spacing={0}>
+            <div className="app-details">
+              <h3 className="title-ask">
+                <BsFillPeopleFill className="badge" />
+                Friend list
+              </h3>
+              <div className="task-list">
+                <ul>
+                  {profile.id &&
+                    askList.map((ask) => (
+                      <Ask
+                        key={ask.id}
+                        ask={ask}
+                        prof={profiles.filter((item) => {
+                          return item.userPro === ask.askFrom;
+                        })}
+                      />
+                    ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid container justify="center">
+        <Grid item xs={12} sm={12} md={12}>
+          <Grid container spacing={0}>
+            <div className="app-dms">
+              <h3>
+                <GoMail className="badge" />
+                DM Inbox
+              </h3>
+              <div className="task-list">
+                <ul>
+                  {profile.id &&
+                    inbox.map((dm) => (
+                      <InboxDM
+                        key={dm.id}
+                        dm={dm}
+                        prof={profiles.filter((item) => {
+                          return item.userPro === dm.sender;
+                        })}
+                      />
+                    ))}
+                </ul>
+              </div>
+            </div>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

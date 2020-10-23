@@ -11,8 +11,11 @@ const ApiContextProvider = (props) => {
     id: "",
     nickName: "",
     frame: "",
+    framebrand: "",
     compo: "",
+    compobrand: "",
     wheel: "",
+    wheelbrand: "",
   });
   const [askList, setAskList] = useState([]);
   const [askListFull, setAskListFull] = useState([]);
@@ -48,8 +51,11 @@ const ApiContextProvider = (props) => {
             id: resmy.data[0].id,
             nickName: resmy.data[0].nickName,
             frame: resmy.data[0].frame,
+            framebrand: resmy.data[0].framebrand,
             compo: resmy.data[0].compo,
+            compobrand: resmy.data[0].compobrand,
             wheel: resmy.data[0].wheel,
+            wheelbrand: resmy.data[0].wheelbrand,
           });
         resmy.data[0] &&
           setAskList(
@@ -102,8 +108,11 @@ const ApiContextProvider = (props) => {
     const createData = new FormData();
     createData.append("nickName", editedProfile.nickName);
     createData.append("frame", editedProfile.frame);
+    createData.append("framebrand", editedProfile.framebrand);
     createData.append("compo", editedProfile.compo);
+    createData.append("compobrand", editedProfile.compobrand);
     createData.append("wheel", editedProfile.wheel);
+    createData.append("wheelbrand", editedProfile.wheelbrand);
     cover.name && createData.append("img", cover, cover.name);
     try {
       const res = await axios.post(
@@ -121,8 +130,11 @@ const ApiContextProvider = (props) => {
         id: res.data.id,
         nickName: res.data.nickName,
         frame: res.data.frame,
+        framebrand: res.data.framebrand,
         compo: res.data.compo,
+        compobrand: res.data.compobrand,
         wheel: res.data.wheel,
+        wheelbrand: res.data.wheelbrand,
       });
     } catch {
       console.log("error");
@@ -146,8 +158,11 @@ const ApiContextProvider = (props) => {
         id: "",
         nickName: "",
         frame: "",
+        framebrand: "",
         compo: "",
+        compobrand: "",
         wheel: "",
+        wheelbrand: "",
       });
       setCover([]);
       setAskList([]);
@@ -160,8 +175,11 @@ const ApiContextProvider = (props) => {
     const editData = new FormData();
     editData.append("nickName", editedProfile.nickName);
     editData.append("frame", editedProfile.frame);
+    editData.append("framebrand", editedProfile.framebrand);
     editData.append("compo", editedProfile.compo);
+    editData.append("compobrand", editedProfile.compobrand);
     editData.append("wheel", editedProfile.wheel);
+    editData.append("wheelbrand", editedProfile.wheelbrand);
     cover.name && editData.append("img", cover, cover.name);
     try {
       const res = await axios.put(
